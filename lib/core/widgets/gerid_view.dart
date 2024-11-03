@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tahadoapp/core/widgets/custom_card%20.dart';
+import 'package:tahadoapp/ui/home/widgets/custom_card%20.dart';
 
 class GeridViewCustom extends StatelessWidget {
   final int? crossAxisCount;
@@ -29,7 +29,7 @@ class GeridViewCustom extends StatelessWidget {
       ),
       itemCount: itemCount, // عدد العناصر المعروضة
       itemBuilder: (context, index) {
-        return const CustomCard();
+        return  SizedBox();
       },
     );
   }

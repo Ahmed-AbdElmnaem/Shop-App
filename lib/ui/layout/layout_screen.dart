@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:tahadoapp/core/theming/color_manger.dart';
-import 'package:tahadoapp/ui/home/Search_page.dart';
-import 'package:tahadoapp/ui/home/favourites_page.dart';
+import 'package:tahadoapp/ui/search/Search_page.dart';
+import 'package:tahadoapp/ui/favourites/favourites_page.dart';
 import 'package:tahadoapp/ui/home/home_page.dart';
-import 'package:tahadoapp/ui/home/profile_page.dart';
+import 'package:tahadoapp/ui/profile/profile_page.dart';
 
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});

@@ -9,6 +9,7 @@ class AppAppbar extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+     
       backgroundColor: ColorManger.mainColor,
       title: Text(
         title,

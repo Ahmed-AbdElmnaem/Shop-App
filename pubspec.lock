@@ -25,6 +25,14 @@ packages:
       url: "https://pub.flutter-io.cn"
     source: hosted
     version: "2.1.1"
+  buildcondition:
+    dependency: "direct main"
+    description:
+      name: buildcondition
+      sha256: "0fbea68c68a17f4e13cdf68313c5932d476c6cb46e794b3058c7ff19d5e79be3"
+      url: "https://pub.flutter-io.cn"
+    source: hosted
+    version: "0.0.4"
   carousel_slider:
     dependency: "direct main"
     description:

@@ -1,10 +1,13 @@
+import 'package:buildcondition/buildcondition.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:tahadoapp/core/theming/color_manger.dart';
-import 'package:tahadoapp/core/widgets/Carouse_Slider_custom.dart';
 import 'package:tahadoapp/core/widgets/app_appbar.dart';
 import 'package:tahadoapp/core/widgets/app_text_search.dart';
+import 'package:tahadoapp/logic/app_cubit/app_cubit.dart';
+import 'package:tahadoapp/ui/home/widgets/Carouse_Slider_custom.dart';
 import 'package:tahadoapp/ui/home/widgets/categroy_item.dart';
-import 'package:tahadoapp/core/widgets/custom_card%20.dart';
+import 'package:tahadoapp/ui/home/widgets/custom_card%20.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -79,15 +82,40 @@ class HomePage extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
-              height: 280.0,
-              child: ListView.builder(
-                padding: const EdgeInsets.symmetric(horizontal: 20.0),
-                scrollDirection: Axis.horizontal,
-                shrinkWrap: true,
-                itemCount: 10,
-                itemBuilder: (context, index) => const CustomCard(),
-              ),
+            BlocBuilder<AppCubit, AppState>(
+              builder: (context, state) {
+                return BuildCondition(
+                  condition: state is! GetProductLoadingState &&
+                      context.read<AppCubit>().productModel != null,
+                  builder: (context) => SizedBox(
+                    height: 280.0,
+                    child: ListView.builder(
+                      padding: const EdgeInsets.symmetric(horizontal: 20.0),
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: context
+                          .read<AppCubit>()
+                          .productModel!
+                          .data!
+                          .products!
+                          .length,
+                      itemBuilder: (context, index) => CustomCard(
+                        model: context
+                            .read<AppCubit>()
+                            .productModel!
+                            .data!
+                            .products![index],
+                      ),
+                    ),
+                  ),
+                  fallback: (context) => const Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              },
+            ),
+            const SizedBox(
+              height: 20,
             )
           ],
         ),

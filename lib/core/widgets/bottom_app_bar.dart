@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:tahadoapp/ui/home/favourites_page.dart';
+import 'package:tahadoapp/ui/favourites/favourites_page.dart';
 import 'package:tahadoapp/ui/home/home_page.dart';
 
 class HomeScreen extends StatefulWidget {

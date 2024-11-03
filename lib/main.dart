@@ -21,9 +21,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => AppCubit()..getCategoryData(),
+      create: (context) => AppCubit()..getCategoryData()..getBannersData()..getProductData(),
       child: MaterialApp(
-        theme: ThemeData(),
+        theme: ThemeData(
+          appBarTheme: const AppBarTheme(
+            iconTheme: IconThemeData(color: Colors.white)
+          )
+        ),
         home: const SplashScreen(),
         debugShowCheckedModeBanner: false,
       ),
