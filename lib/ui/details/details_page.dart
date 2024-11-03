@@ -102,7 +102,7 @@ class _DetailsPage extends State<DetailsPage> {
                             ),
                             const SizedBox(height: 4),
                             Text(
-                              widget.model.discount.toString() ?? '',
+                              '${widget.model.discount}%',
                               maxLines: 1,
                               overflow: TextOverflow.ellipsis,
                               style: const TextStyle(
