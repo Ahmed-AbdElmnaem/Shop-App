@@ -1,14 +1,10 @@
-import 'dart:math';
-
-import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
+import 'package:tahadoapp/core/theming/color_manger.dart';
 import 'package:tahadoapp/core/widgets/Carouse_Slider_custom.dart';
-import 'package:tahadoapp/core/widgets/app_text_form_field.dart';
+import 'package:tahadoapp/core/widgets/app_appbar.dart';
 import 'package:tahadoapp/core/widgets/app_text_search.dart';
-import 'package:tahadoapp/core/widgets/bottom_app_bar.dart';
-import 'package:tahadoapp/core/widgets/categroy_item.dart';
+import 'package:tahadoapp/ui/home/widgets/categroy_item.dart';
 import 'package:tahadoapp/core/widgets/custom_card%20.dart';
-import 'package:tahadoapp/core/widgets/gerid_view.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -16,12 +12,13 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF1F4E79),
+      backgroundColor: ColorManger.mainColor,
+      appBar: const AppAppbar(title: "Home"),
       body: SingleChildScrollView(
         child: Column(
           mainAxisSize: MainAxisSize.min, // Make Column take minimum space
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const SizedBox(height: 25),
             Row(
               children: [
                 Padding(
@@ -55,7 +52,7 @@ class HomePage extends StatelessWidget {
               child: AppTextSearch(),
             ),
             const SizedBox(height: 10),
-            SizedBox(height: 130, child: CategroyItem()),
+            const CategroyItem(),
             const CarouseSliderCustom(),
             const Align(
               alignment: Alignment.centerRight, // المحاذاة إلى اليمين
@@ -85,6 +82,7 @@ class HomePage extends StatelessWidget {
             SizedBox(
               height: 280.0,
               child: ListView.builder(
+                padding: const EdgeInsets.symmetric(horizontal: 20.0),
                 scrollDirection: Axis.horizontal,
                 shrinkWrap: true,
                 itemCount: 10,
