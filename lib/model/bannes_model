@@ -1,0 +1,33 @@
+class BannersModel {
+  bool? status;
+ 
+  List<Data>? data;
+
+ 
+
+  BannersModel.fromJson(Map<String, dynamic> json) {
+    status = json['status'];
+  
+    if (json['data'] != null) {
+      data = <Data>[];
+      json['data'].forEach((v) {
+        data!.add(new Data.fromJson(v));
+      });
+    }
+  }
+
+}
+
+class Data {
+  int? id;
+  String? image;
+ 
+
+
+  Data.fromJson(Map<String, dynamic> json) {
+    id = json['id'];
+    image = json['image'];
+  
+  }
+
+}

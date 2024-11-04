@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class Profile extends StatelessWidget {
   const Profile({super.key});
@@ -10,22 +9,22 @@ class Profile extends StatelessWidget {
         backgroundColor: const Color(0xFF1F4E79),
         body: Column(
           children: [
-            SizedBox(height: 40),
-            CircleAvatar(
+            const SizedBox(height: 40),
+            const CircleAvatar(
               radius: 50,
               backgroundColor: Colors.white,
               foregroundColor: Colors.white,
               backgroundImage: NetworkImage(
                   'https://cdn-icons-png.flaticon.com/512/147/147142.png'),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
-            Text(
+            const Text(
               'Ahmed Mohamed',
               style: TextStyle(color: Colors.white, fontSize: 25),
             ),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             Row(
@@ -37,27 +36,27 @@ class Profile extends StatelessWidget {
                   width: 20,
                   fit: BoxFit.cover,
                 ),
-                Text('02+',
+                const Text('02+',
                     style: TextStyle(color: Colors.white, fontSize: 20)),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
-                Text(
+                const Text(
                   '0123456789',
                   style: TextStyle(color: Colors.white, fontSize: 20),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
               ],
             ),
-            SizedBox(
+            const SizedBox(
               height: 30,
             ),
             ListView(
               shrinkWrap: true,
               children: [
-                ListTile(
+                const ListTile(
                   leading: Icon(
                     Icons.person,
                     color: Colors.white,
@@ -70,16 +69,16 @@ class Profile extends StatelessWidget {
                 ListTile(
                   enabled: true,
                   onTap: () {},
-                  leading: Icon(
+                  leading: const Icon(
                     Icons.settings,
                     color: Colors.white,
                   ),
-                  title: Text(
+                  title: const Text(
                     'الاعدادات',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(
                     Icons.location_on,
                     color: Colors.white,
@@ -89,7 +88,7 @@ class Profile extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(
                     Icons.favorite,
                     color: Colors.white,
@@ -99,7 +98,7 @@ class Profile extends StatelessWidget {
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
                 ),
-                ListTile(
+                const ListTile(
                   leading: Icon(
                     Icons.logout,
                     color: Colors.white,

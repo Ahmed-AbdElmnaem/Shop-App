@@ -37,7 +37,7 @@ class ApiService {
     Map<String, dynamic>? data,
     Map<String, dynamic>? query,
     String? token,
-    String lang = 'ar',
+    String lang = 'en',
   }) async {
     dio.options.headers = {
       'lang': lang,

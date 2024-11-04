@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
-import 'package:tahadoapp/core/widgets/bottom_app_bar.dart';
-import 'package:tahadoapp/ui/home/Search_page.dart';
-import 'package:tahadoapp/ui/home/favourites_page.dart';
+import 'package:tahadoapp/core/theming/color_manger.dart';
+import 'package:tahadoapp/ui/search/Search_page.dart';
+import 'package:tahadoapp/ui/favourites/favourites_page.dart';
 import 'package:tahadoapp/ui/home/home_page.dart';
-import 'package:tahadoapp/ui/home/profile_page.dart';
+import 'package:tahadoapp/ui/profile/profile_page.dart';
 
 class LayoutScreen extends StatefulWidget {
   const LayoutScreen({super.key});
@@ -20,15 +19,16 @@ class _LayoutScreenState extends State<LayoutScreen> {
     SearchPage(),
     Profile(),
     FavouritesPage(),
+    FavouritesPage(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('My App')),
       bottomNavigationBar: BottomNavigationBar(
+        elevation: 10,
         type: BottomNavigationBarType.fixed,
         currentIndex: selectedIndex,
-        selectedItemColor: Colors.deepPurpleAccent,
+        selectedItemColor: ColorManger.mainColor,
         unselectedItemColor: Colors.grey,
         showUnselectedLabels: true,
         onTap: (index) {
@@ -44,6 +44,10 @@ class _LayoutScreenState extends State<LayoutScreen> {
           BottomNavigationBarItem(
             icon: Icon(Icons.search),
             label: 'Search',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.shopping_cart),
+            label: 'Cart',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
